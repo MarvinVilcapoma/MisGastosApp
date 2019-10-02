@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    tools:context=".activities.RegisterActivity">
+    <TextView
+        android:id="@+id/tvRegistrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/registrar"
+        android:textSize="20sp">
+    </TextView>
+
+    <EditText
+        android:id="@+id/etMonto"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/tvRegistrar"
+        android:layout_width="match_parent"
+        android:hint="Monto"
+        android:inputType="numberDecimal"
+        android:layout_height="wrap_content">
+    </EditText>
+    <View
+        android:id="@+id/v1"
+        android:layout_width="1dp"
+        android:layout_centerInParent="true"
+        android:layout_height="match_parent">
+    </View>
+
+    <RadioGroup
+        android:id="@+id/rgIngresoEgreso"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/etMonto"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rbtnIngreso"
+            android:layout_width="wrap_content"
+            android:layout_height="21dp"
+            android:layout_below="@+id/etMonto"
+            android:text="  Ingreso"></RadioButton>
+
+        <RadioButton
+            android:id="@+id/rbtnEgreso"
+            android:layout_width="wrap_content"
+            android:layout_height="21dp"
+            android:layout_below="@+id/etMonto"
+            android:text="  Egreso"></RadioButton>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvTipoDeCuenta"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/rgIngresoEgreso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tipo de cuenta"></TextView>
+    <View
+        android:id="@+id/v2"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/tvTipoDeCuenta"
+        android:background="#7C7676"
+        android:layout_height="2dp">
+    </View>
+    <RadioGroup
+        android:layout_marginTop="20dp"
+        android:id="@+id/rgTipoCuenta"
+        android:layout_below="@+id/tvTipoDeCuenta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/rbtnTarjeta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tarjeta de Credico"></RadioButton>
+        <RadioButton
+            android:id="@+id/rbtnAhorro"
+            android:text="Ahorro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </RadioButton>
+        <RadioButton
+            android:id="@+id/rbtnEfectivo"
+            android:text="Efectivo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </RadioButton>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnRegistrar"
+        android:layout_below="@+id/rgTipoCuenta"
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:text="Registrar"
+        android:onClick="registrar"
+        android:background="@color/colorAccent"
+        android:drawableRight="@android:drawable/ic_menu_save"
+        android:layout_height="wrap_content"></Button>
+
+
+
+
+</RelativeLayout>

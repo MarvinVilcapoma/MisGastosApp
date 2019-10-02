@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    tools:context=".activities.MainActivity">
+
+
+    <TextView
+        android:id="@+id/contabilidad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="@string/contabilidad"></TextView>
+
+    <TextView
+        android:id="@+id/tvAhorro"
+        android:onClick="detail1"
+        android:layout_below="@+id/contabilidad"
+        android:drawableLeft="@drawable/ic_search_foreground"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:textStyle="bold"
+        android:text="Saldo Actual Ahorro">
+    </TextView>
+    <TextView
+        android:id="@+id/tvMontoAhorro"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/contabilidad"
+        android:layout_alignParentEnd="true"
+        android:layout_alignRight="@+id/tvAhorro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="S/."
+        ></TextView>
+    <View
+        android:layout_centerHorizontal="true"
+        android:layout_width="2dp"
+        android:layout_height="match_parent">
+    </View>
+    <TextView
+        android:id="@+id/tvCredito"
+        android:layout_below="@+id/tvAhorro"
+        android:onClick="detail1"
+        android:drawableLeft="@drawable/ic_search_foreground"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:textStyle="bold"
+        android:text="Saldo Actual Credito">
+    </TextView>
+    <TextView
+        android:id="@+id/tvMontoCredito"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/tvMontoAhorro"
+        android:layout_alignParentEnd="true"
+        android:layout_alignRight="@+id/tvEfectivo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="S/."
+        ></TextView>
+    <TextView
+        android:id="@+id/tvEfectivo"
+        android:layout_below="@+id/tvCredito"
+        android:onClick="detail1"
+        android:drawableLeft="@drawable/ic_search_foreground"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:textStyle="bold"
+        android:text="Saldo Actual Efectivo">
+    </TextView>
+
+    <TextView
+        android:id="@+id/tvMontoEfectivo"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/tvMontoCredito"
+        android:layout_alignParentEnd="true"
+        android:layout_alignRight="@+id/tvEfectivo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="S/."
+        ></TextView>
+
+    <TextView
+        android:id="@+id/tvProporcion"
+        android:layout_below="@+id/tvEfectivo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Proporcion de Ingresos / Egresos">
+
+    </TextView>
+    <ProgressBar
+        android:layout_below="@+id/tvProporcion"
+        android:layout_marginTop="10dp"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:progress="0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></ProgressBar>
+
+        <android.support.design.widget.FloatingActionButton
+            android:src="@android:drawable/ic_menu_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:onClick="callRegistrar"
+            android:layout_alignParentEnd="true">
+        </android.support.design.widget.FloatingActionButton>
+
+
+</RelativeLayout>
