@@ -2,4 +2,9 @@
     <string name="app_name">MisGastosApp</string>
     <string name="registrar">Registrar Ingresos / Egresos</string>
     <string name="contabilidad">Contabilidad de Ingresos / Egresos</string>
+    <array name="tipos">
+        <item>Tarjeta de Credito</item>
+        <item>Ahorro</item>
+        <item>Efectivo</item>
+    </array>
 </resources>

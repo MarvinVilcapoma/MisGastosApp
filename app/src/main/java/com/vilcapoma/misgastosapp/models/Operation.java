@@ -1,21 +1,31 @@
 package com.vilcapoma.misgastosapp.models;
 
 public class Operation {
-    double monto;
+    String fecha;
+    String monto;
     String operacion;
     String tipo;
 
-    public Operation(double monto, String operacion, String tipo) {
+    public Operation(String fecha, String monto, String operacion, String tipo) {
+        this.fecha = fecha;
         this.monto = monto;
         this.operacion = operacion;
         this.tipo = tipo;
     }
 
-    public double getMonto() {
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getMonto() {
         return monto;
     }
 
-    public void setMonto(double monto) {
+    public void setMonto(String monto) {
         this.monto = monto;
     }
 

@@ -6,64 +6,60 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 
 import com.vilcapoma.misgastosapp.R;
 import com.vilcapoma.misgastosapp.models.Operation;
 import com.vilcapoma.misgastosapp.repositories.OperationRespository;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class RegisterActivity extends AppCompatActivity {
 
-    private EditText monto;
-    private RadioGroup grupo,grupo1;
-    private Button registrar;
+    Spinner spinner;
+    Button registro;
+    RadioButton rbtn1;
+    RadioButton rbtn2;
+    EditText monto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        monto=findViewById(R.id.etMonto);
-        grupo=(RadioGroup)findViewById(R.id.rgIngresoEgreso);
-        grupo1=(RadioGroup)findViewById(R.id.rgTipoCuenta);
-        registrar=findViewById(R.id.btnRegistrar);
+        spinner = findViewById(R.id.spinner_tipo);
+        registro = findViewById(R.id.btnRegistrar);
+        rbtn1 = findViewById(R.id.rbtnIngreso);
+        rbtn2 = findViewById(R.id.rbtnEgreso);
+        monto = findViewById(R.id.etMonto);
 
-        registrar.setOnClickListener(new View.OnClickListener() {
+        registro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                registrar();
+                add();
             }
         });
+
     }
 
-    private void registrar(){
-
-        String operacion= "";
-        String tipo ="";
-        double mon=Double.parseDouble(monto.toString());
-        if (grupo.getCheckedRadioButtonId()==R.id.rbtnIngreso){
-            operacion = "Ingreso";
-        }else if(grupo.getCheckedRadioButtonId()==R.id.rbtnEgreso){
-            operacion = "Egreso";
-
-        }else if(grupo1.getCheckedRadioButtonId()==R.id.rbtnAhorro){
-            tipo="Ahorro";
-        }else if(grupo1.getCheckedRadioButtonId()==R.id.rbtnEfectivo){
-            tipo="Efectivo";
-        }else if(grupo1.getCheckedRadioButtonId()==R.id.rbtnTarjeta){
-            tipo="Tarjeta de Credito";
+    private void add(){
+        String operacion = spinner.getSelectedItem().toString();
+        String cantidad = monto.getText().toString();
+        String tipo;
+        DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        String date = df.format(Calendar.getInstance().getTime());
+        if(rbtn1.isChecked()){
+            tipo = "Ingresos";
+        }else{
+            tipo = "Egresos";
         }
-
-        Operation operation = new Operation(mon,operacion,tipo);
-        OperationRespository.add(operation);
-
-
-
-
-    }
-
-    public void registrar(View view) {
-        Intent intent=new Intent(RegisterActivity.this, MainActivity.class);
-        startActivity(intent);
+        OperationRespository.agregar(date, cantidad, operacion, tipo);
+        Intent e = new Intent(getApplicationContext(),MainActivity.class);
+        startActivity(e);
+        finish();
     }
 }

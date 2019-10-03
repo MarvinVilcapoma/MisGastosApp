@@ -19,7 +19,6 @@
 
     <TextView
         android:id="@+id/tvAhorro"
-        android:onClick="detail1"
         android:layout_below="@+id/contabilidad"
         android:drawableLeft="@drawable/ic_search_foreground"
         android:layout_marginTop="20dp"
@@ -46,7 +45,6 @@
     <TextView
         android:id="@+id/tvCredito"
         android:layout_below="@+id/tvAhorro"
-        android:onClick="detail1"
         android:drawableLeft="@drawable/ic_search_foreground"
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
@@ -67,7 +65,6 @@
     <TextView
         android:id="@+id/tvEfectivo"
         android:layout_below="@+id/tvCredito"
-        android:onClick="detail1"
         android:drawableLeft="@drawable/ic_search_foreground"
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
@@ -97,21 +94,23 @@
 
     </TextView>
     <ProgressBar
+        android:id="@+id/progress_bar"
         android:layout_below="@+id/tvProporcion"
-        android:layout_marginTop="10dp"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:progress="0"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></ProgressBar>
+        android:layout_height="wrap_content"
+        android:min="0"
+        android:max="100"
+        android:padding="20dp"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
 
-        <android.support.design.widget.FloatingActionButton
-            android:src="@android:drawable/ic_menu_add"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:onClick="callRegistrar"
-            android:layout_alignParentEnd="true">
-        </android.support.design.widget.FloatingActionButton>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabadd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:src="@android:drawable/ic_menu_add"></android.support.design.widget.FloatingActionButton>
 
 
 </RelativeLayout>

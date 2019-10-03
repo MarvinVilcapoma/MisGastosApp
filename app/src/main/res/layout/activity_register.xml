@@ -66,38 +66,20 @@
         android:background="#7C7676"
         android:layout_height="2dp">
     </View>
-    <RadioGroup
-        android:layout_marginTop="20dp"
-        android:id="@+id/rgTipoCuenta"
+    <Spinner
+        android:id="@+id/spinner_tipo"
         android:layout_below="@+id/tvTipoDeCuenta"
+        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <RadioButton
-            android:id="@+id/rbtnTarjeta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tarjeta de Credico"></RadioButton>
-        <RadioButton
-            android:id="@+id/rbtnAhorro"
-            android:text="Ahorro"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        </RadioButton>
-        <RadioButton
-            android:id="@+id/rbtnEfectivo"
-            android:text="Efectivo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        </RadioButton>
-    </RadioGroup>
+        android:layout_height="wrap_content"
+        android:entries="@array/tipos"/>
 
     <Button
         android:id="@+id/btnRegistrar"
-        android:layout_below="@+id/rgTipoCuenta"
+        android:layout_below="@+id/spinner_tipo"
         android:layout_marginTop="40dp"
         android:layout_width="match_parent"
         android:text="Registrar"
-        android:onClick="registrar"
         android:background="@color/colorAccent"
         android:drawableRight="@android:drawable/ic_menu_save"
         android:layout_height="wrap_content"></Button>
